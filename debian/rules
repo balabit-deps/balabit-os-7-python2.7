@@ -33,7 +33,7 @@ SPHINXOPTS := -D today='$(shell LC_ALL=C date -u +'%B %d, %Y' -d '$(LAST_CHANGE)
 SPHINXOPTS += -D html_last_updated_fmt='$(shell LC_ALL=C date -u +'%B %d, %Y' -d '$(LAST_CHANGE)')'
 export SPHINXOPTS
 
-on_buildd := $(shell [ -f /CurrentlyBuilding -o "$$LOGNAME" = buildd -o "$$USER" = buildd ] && echo yes)
+on_buildd := yes
 
 dh_compat2 := $(shell dpkg --compare-versions "$$(dpkg-query -f '$${Version}' -W debhelper)" lt 9.20150811ubuntu2 && echo DH_COMPAT=2)
 
