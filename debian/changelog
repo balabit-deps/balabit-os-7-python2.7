@@ -1,3 +1,9 @@
+python2.7 (2.7.15~rc1-1bb1) unstable; urgency=medium
+
+  * disable long tests - cherry-picked from old BB python
+
+ -- PAM SCB SPS <pam-l@balabit.com>  Tue Jul 31 13:48:42 UTC 2018
+
 python2.7 (2.7.15~rc1-1) unstable; urgency=medium
 
   * Python 2.7.15 release candidate 1.
