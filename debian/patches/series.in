@@ -70,3 +70,5 @@ issue27239.diff
 rename-md5-init.diff
 local-doc-references.diff
 m-i-p-s-r6.diff
+CVE-2018-1000802.patch
+CVE-2018-14647.patch
