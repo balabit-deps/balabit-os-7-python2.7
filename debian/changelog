@@ -1,3 +1,16 @@
+python2.7 (2.7.15~rc1-1ubuntu0.1) bionic-security; urgency=medium
+
+  * SECURITY UPDATE: command injection in shutil module
+    - debian/patches/CVE-2018-1000802.patch: use subprocess rather than
+      distutils.spawn in Lib/shutil.py.
+    - CVE-2018-1000802
+  * SECURITY UPDATE: incorrect Expat hash salt initialization
+    - debian/patches/CVE-2018-14647.patch: call SetHashSalt in
+      Include/pyexpat.h, Modules/_elementtree.c, Modules/pyexpat.c.
+    - CVE-2018-14647
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Mon, 12 Nov 2018 09:31:15 -0500
+
 python2.7 (2.7.15~rc1-1bb1) unstable; urgency=medium
 
   * disable long tests - cherry-picked from old BB python
