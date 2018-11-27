@@ -2,6 +2,19 @@
 Python News
 +++++++++++
 
+What's New in Python 2.7.15 final?
+==================================
+
+*Release date: 2018-04-29*
+
+Core and Builtins
+-----------------
+
+- bpo-33374: Tweak the definition of PyGC_Head, so compilers do not believe
+  it is always 16-byte aligned on x86. This prevents crashes with more
+  aggressive optimizations present in GCC 8.
+
+
 What's New in Python 2.7.15 release candidate 1?
 ================================================
 

@@ -171,7 +171,7 @@ Index: b/configure.ac
  
  if test "$cross_compiling" = yes; then
  	RUNSHARED=
-@@ -4945,7 +4948,7 @@ AC_MSG_RESULT($ENSUREPIP)
+@@ -4954,7 +4957,7 @@ AC_MSG_RESULT($ENSUREPIP)
  AC_SUBST(ENSUREPIP)
  
  # generate output files
