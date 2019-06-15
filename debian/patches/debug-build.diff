@@ -186,7 +186,7 @@ Index: b/configure.ac
  # XXX Shouldn't the code above that fiddles with BASECFLAGS and OPT be
  # merged with this chunk of code?
  
-@@ -2122,7 +2128,7 @@ then
+@@ -2129,7 +2135,7 @@ then
  		esac
  		;;
  	CYGWIN*)   SO=.dll;;

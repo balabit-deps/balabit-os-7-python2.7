@@ -193,6 +193,14 @@ ifeq ($(with_lto),yes)
     RANLIB=$(DEB_HOST_GNU_TYPE)-gcc-ranlib
 endif
 
+ifneq ($(with_fpectl),yes)
+  ifeq ($(derivative),Ubuntu)
+    arch_substvars =  '-Vpyfpe:Breaks=$(shell tr '\n' ' ' < debian/pyfpe-breaks.$(derivative))'
+  else ifeq ($(derivative),Debian)
+    arch_substvars =  '-Vpyfpe:Breaks=$(shell tr '\n' ' ' < debian/pyfpe-breaks.$(derivative))'
+  endif
+endif
+
 make_build_target = $(if $(with_pgo),profile-opt)
 
 buildd_static	:= $(CURDIR)/build-static
@@ -678,7 +686,6 @@ control-file:
 	    -e "s/@bd_gcc@/$(bd_gcc)/g" \
 	    -e "s/@bd_dpkgdev@/$(bd_dpkgdev)/g" \
 	    -e "s/@pf_bluetooth@/$(pf_bluetooth)/g" \
-	    -e "s/PYFPE_BREAKS/$(if $(filter yes,$(with_fpectl)),,$$(tr '\n' ' ' < debian/pyfpe-breaks.$(derivative)))/g" \
 		debian/control.in \
 	  | $(ma_filter) \
 	  > debian/control.tmp
@@ -1370,7 +1377,7 @@ endif
 	dh_shlibdeps -p$(p_min) -- -dPre-Depends
 	dh_shlibdeps -a -N$(p_min)
 	dh_installdeb -a
-	dh_gencontrol -a
+	dh_gencontrol -a -- $(arch_substvars)
 	dh_md5sums -a
 	dh_builddeb -a
 

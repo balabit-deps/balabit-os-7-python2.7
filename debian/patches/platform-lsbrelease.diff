@@ -4,7 +4,7 @@ Index: b/Lib/platform.py
 ===================================================================
 --- a/Lib/platform.py
 +++ b/Lib/platform.py
-@@ -261,7 +261,7 @@ _release_version = re.compile(r'([^0-9]+
+@@ -290,7 +290,7 @@ _release_version = re.compile(r'([^0-9]+
  _supported_dists = (
      'SuSE', 'debian', 'fedora', 'redhat', 'centos',
      'mandrake', 'mandriva', 'rocks', 'slackware', 'yellowdog', 'gentoo',
@@ -13,7 +13,7 @@ Index: b/Lib/platform.py
  
  def _parse_release_file(firstline):
  
-@@ -290,6 +290,10 @@ def _parse_release_file(firstline):
+@@ -319,6 +319,10 @@ def _parse_release_file(firstline):
              id = l[1]
      return '', version, id
  
@@ -24,7 +24,7 @@ Index: b/Lib/platform.py
  def linux_distribution(distname='', version='', id='',
  
                         supported_dists=_supported_dists,
-@@ -314,6 +318,25 @@ def linux_distribution(distname='', vers
+@@ -343,6 +347,25 @@ def linux_distribution(distname='', vers
          args given as parameters.
  
      """

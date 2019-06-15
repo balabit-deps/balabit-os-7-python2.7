@@ -67,6 +67,11 @@ case "$(uname -m)" in s390*)
   TESTEXCLUSIONS="$TESTEXCLUSIONS test_regrtest"
 esac
 
+# testsuite not ready for OpenSSL 1.2 ...
+case "$vendor" in Debian)
+  TESTEXCLUSIONS="$TESTEXCLUSIONS test_ftplib test_ssl"
+esac
+
 if [ "$su_user" = nobody ]; then
   log=/dev/null
 else
