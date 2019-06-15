@@ -1,4 +1,3 @@
-python2.7 (2.7.15~rc1-1ubuntu0.1) bionic-security; urgency=medium
 python2.7 (2.7.15-4ubuntu4~18.04) bionic; urgency=medium
   * SECURITY UPDATE: command injection in shutil module
     - debian/patches/CVE-2018-1000802.patch: use subprocess rather than
