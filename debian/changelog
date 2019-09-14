@@ -1,3 +1,47 @@
+python2.7 (2.7.15-4ubuntu4~18.04.1) bionic-security; urgency=medium
+
+  * SECURITY UPDATE: incorrect cookie domain check
+    - debian/patches/CVE-2018-20852.patch: prefix dot in domain for proper
+      subdomain validation in Lib/cookielib.py, Lib/test/test_cookielib.py.
+    - CVE-2018-20852
+  * SECURITY UPDATE: NULL pointer dereference via X509 certificate
+    - debian/patches/CVE-2019-5010.patch: fix segfault in ssl cert parser
+      in Lib/test/talos-2019-0758.pem, Lib/test/test_ssl.py,
+      Modules/_ssl.c.
+    - CVE-2019-5010
+  * SECURITY UPDATE: improper handling of unicode encoding
+    - debian/patches/CVE-2019-9636-1.patch: add check for characters in
+      netloc that normalize to separators in Doc/library/urlparse.rst,
+      Lib/test/test_urlparse.py, Lib/urlparse.py.
+    - debian/patches/CVE-2019-9636-2.patch: only print test messages when
+      verbose in Lib/test/test_urlparse.py.
+    - CVE-2019-9636
+  * SECURITY UPDATE: HTTP header injection
+    - debian/patches/CVE-2019-9740.patch: disallow control chars in http
+      URLs in Lib/httplib.py, Lib/test/test_urllib.py,
+      Lib/test/test_urllib2.py, Lib/test/test_xmlrpc.py.
+    - CVE-2019-9740
+    - CVE-2019-9947
+  * SECURITY UPDATE: urllib support the local_file: scheme
+    - debian/patches/CVE-2019-9948.patch: disallow file reading in
+      Lib/urllib.py, Lib/test/test_urllib.py.
+    - CVE-2019-9948
+  * SECURITY UPDATE: incomplete fix for CVE-2019-9636
+    - debian/patches/CVE-2019-10160-1.patch: fix handling of
+      pre-normalization characters in urlsplit() in
+      Lib/test/test_urlparse.py, Lib/urlparse.py.
+    - debian/patches/CVE-2019-10160-2.patch: correct fix to handle
+      decomposition in usernames in Lib/test/test_urlparse.py,
+      Lib/urlparse.py.
+    - debian/patches/CVE-2019-10160-3.patch: fix urlparse.urlsplit() error
+      message for Unicode URL in Lib/test/test_urlparse.py,
+      Lib/urlparse.py.
+    - CVE-2019-10160
+  * debian/patches/issue9146.diff: fix FIPS mode environments where MD5
+    isn't available in Modules/_hashopenssl.c. (LP: #1835135)
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Tue, 09 Jul 2019 12:51:35 -0400
+
 python2.7 (2.7.15-4ubuntu4~18.04bb1) bionic; urgency=medium
 
   * Balabit patched version
