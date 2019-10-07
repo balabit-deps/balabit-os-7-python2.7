@@ -1,3 +1,16 @@
+python2.7 (2.7.15-4ubuntu4~18.04.2) bionic-security; urgency=medium
+
+  * SECURITY UPDATE: incorrect email address parsing
+    - debian/patches/CVE-2019-16056.patch: don't parse domains containing @
+      in Lib/email/_parseaddr.py, Lib/test/test_email/test_email.py.
+    - CVE-2019-16056
+  * SECURITY UPDATE: XSS in documentation XML-RPC server
+    - debian/patches/CVE-2019-16935.patch: escape the server_title in
+      Lib/DocXMLRPCServer.py, Lib/test/test_docxmlrpc.py.
+    - CVE-2019-16935
+
+ -- Marc Deslauriers <marc.deslauriers@ubuntu.com>  Mon, 07 Oct 2019 13:39:04 -0400
+
 python2.7 (2.7.15-4ubuntu4~18.04.1) bionic-security; urgency=medium
 
   * SECURITY UPDATE: incorrect cookie domain check
