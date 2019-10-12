@@ -84,3 +84,5 @@ CVE-2019-10160-1.patch
 CVE-2019-10160-2.patch
 CVE-2019-10160-3.patch
 issue9146.diff
+CVE-2019-16056.patch
+CVE-2019-16935.patch
