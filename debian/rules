@@ -514,6 +514,10 @@ ifneq (,$(filter $(DEB_HOST_ARCH), ia64))
 endif
 # see http://bugs.python.org/issue25698
 TEST_EXCLUDES += test_cpickle
+
+# hangs on the buildds
+TEST_EXCLUDES += test_ttk_guionly
+
 ifneq (,$(TEST_EXCLUDES))
   TESTOPTS += -x $(sort $(TEST_EXCLUDES))
   ifneq (,$(filter $(DEB_HOST_ARCH), mips mipsel))
@@ -812,8 +816,10 @@ endif
 
 	mv $(d)/usr/lib/libpython*.a $(d)/usr/lib/$(DEB_HOST_MULTIARCH)/
 
-	mv $(d)/usr/lib/python$(VER)/site-packages \
-		$(d)/usr/lib/python$(VER)/dist-packages
+	if [ -d $(d)/usr/lib/python$(VER)/site-packages ]; then \
+	  mv $(d)/usr/lib/python$(VER)/site-packages \
+	    $(d)/usr/lib/python$(VER)/dist-packages; \
+	fi
 
 	: # remove files, which are not packaged
 	rm -f $(d)/usr/bin/smtpd.py
