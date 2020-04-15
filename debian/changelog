@@ -1,3 +1,16 @@
+python2.7 (2.7.17-1~18.04ubuntu1) bionic-security; urgency=medium
+
+  * SECURITY UPDATE: CRLF injection
+    - debian/patches/CVE-2019-18348.patch: disallow control characters
+      in hostnames in http.client in Lib/httplib.py, Lib/test/test_urllib2.py.
+    - CVE-2019-18348
+  * SECURITY UPDATE: Denial of service
+    - debian/patches/CVE-2020-8492.patch: fix the regex to prevent
+      the regex denial of service in Lib/urllib2.py.
+    - CVE-2020-8492
+
+ -- Leonidas S. Barbosa <leo.barbosa@canonical.com>  Wed, 15 Apr 2020 14:20:14 -0300
+
 python2.7 (2.7.17-1~18.04) bionic-proposed; urgency=medium
 
   * SRU: LP: #1855133.
