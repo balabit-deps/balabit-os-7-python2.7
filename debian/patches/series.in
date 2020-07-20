@@ -73,3 +73,6 @@ m-i-p-s-r6.diff
 multiarch-libc.diff
 CVE-2019-18348.patch
 CVE-2020-8492.patch
+CVE-2019-17514.patch
+CVE-2019-20907.patch
+CVE-2019-9674.patch
